@@ -1,5 +1,7 @@
 # 🚀 AI-Powered HR Shortlisting Agent
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Play_Now-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ai-scored-shortlist.streamlit.app/)
+
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-f55036?style=for-the-badge&logo=groq&logoColor=white)
 ![Llama 3](https://img.shields.io/badge/Llama_3.3_70B-043c72?style=for-the-badge)
