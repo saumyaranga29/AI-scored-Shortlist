@@ -34,7 +34,7 @@ body{
   min-height:100vh;line-height:1.6;
 }
 
-/* ── COVER HEADER ────────────────────────────────────────────── */
+
 .cover{
   background:linear-gradient(135deg,#0d0221 0%,#150a3d 45%,#0a1628 100%);
   padding:3.5rem 4rem 3rem;position:relative;overflow:hidden;
@@ -77,7 +77,7 @@ body{
   padding:0.28rem 0.85rem;font-size:0.75rem;font-weight:500;
 }
 
-/* ── KPI STRIP ────────────────────────────────────────────────── */
+
 .kpi-strip{
   display:grid;grid-template-columns:repeat(6,1fr);
   gap:0;border-bottom:1px solid var(--border);
@@ -92,7 +92,7 @@ body{
 .kpi-lbl{font-size:0.63rem;color:var(--muted);text-transform:uppercase;
   letter-spacing:0.07em;margin-top:0.25rem;}
 
-/* ── JD SUMMARY ──────────────────────────────────────────────── */
+
 .jd-section{
   padding:2rem 4rem;background:var(--s1);
   border-bottom:1px solid var(--border);
@@ -118,7 +118,7 @@ body{
   background:rgba(6,182,212,0.08);border-color:rgba(6,182,212,0.25);color:#67e8f9;
 }
 
-/* ── MAIN CONTENT ─────────────────────────────────────────────── */
+
 .content{padding:2.5rem 4rem;}
 .section-hdr{
   display:flex;align-items:center;justify-content:space-between;
@@ -126,7 +126,7 @@ body{
 }
 .section-hdr h2{font-size:1.1rem;font-weight:700;color:var(--muted2);}
 
-/* ── CANDIDATE CARD ───────────────────────────────────────────── */
+
 .ccard{
   background:var(--s2);border:1px solid var(--border);
   border-radius:20px;margin-bottom:1.5rem;overflow:hidden;
@@ -157,7 +157,7 @@ body{
   padding:0.3rem 0.9rem;border-radius:999px;font-size:0.78rem;font-weight:700;
 }
 
-/* ── CARD BODY ────────────────────────────────────────────────── */
+
 .ccard-body{display:grid;grid-template-columns:1fr 320px;gap:0;}
 .dims-panel{padding:1.5rem 2rem;border-right:1px solid var(--border);}
 .dims-title{font-size:0.7rem;font-weight:700;text-transform:uppercase;
@@ -173,7 +173,7 @@ body{
 .dim-just{font-size:0.71rem;color:var(--muted);margin-top:0.3rem;
   padding-left:0.3rem;border-left:2px solid rgba(255,255,255,0.08);}
 
-/* ── SIDE PANEL ───────────────────────────────────────────────── */
+
 .side-panel{padding:1.5rem;}
 .sg-block{margin-bottom:1.2rem;}
 .sg-title{font-size:0.68rem;font-weight:700;text-transform:uppercase;
@@ -190,14 +190,14 @@ body{
 }
 .assessment-box p{font-size:0.75rem;color:var(--muted);font-style:italic;line-height:1.5;}
 
-/* ── OVERRIDE NOTICE ──────────────────────────────────────────── */
+
 .override-bar{
   background:rgba(245,158,11,0.08);border-top:1px solid rgba(245,158,11,0.25);
   padding:0.6rem 2rem;font-size:0.75rem;color:var(--amber);
   display:flex;align-items:center;gap:0.5rem;
 }
 
-/* ── FOOTER ───────────────────────────────────────────────────── */
+
 .footer{
   text-align:center;padding:2rem;color:var(--muted);font-size:0.75rem;
   border-top:1px solid var(--border);background:var(--s1);
@@ -205,7 +205,7 @@ body{
 }
 .footer strong{color:var(--muted2);}
 
-/* ── COLOR UTILS ──────────────────────────────────────────────── */
+
 .c-green{color:var(--green)!important;}
 .c-blue {color:var(--blue)!important;}
 .c-amber{color:var(--amber)!important;}
@@ -216,7 +216,7 @@ body{
 .bg-amber{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.35)!important;}
 .bg-red  {background:rgba(239,68,68,.12); border-color:rgba(239,68,68,.35)!important;}
 
-/* ── PRINT ────────────────────────────────────────────────────── */
+
 @media print{
   body{background:#fff;color:#000;}
   .ccard{break-inside:avoid;background:#f8fafc;border:1px solid #e2e8f0;}
@@ -224,7 +224,7 @@ body{
   .ccard-body{grid-template-columns:1fr 280px;}
 }
 
-/* ── RESPONSIVE ───────────────────────────────────────────────── */
+
 @media(max-width:900px){
   .cover,.jd-section,.content{padding-left:1.5rem;padding-right:1.5rem;}
   .kpi-strip{grid-template-columns:repeat(3,1fr);}
@@ -242,7 +242,7 @@ body{
 {% macro rec_color(r) %}{% if r == 'Strong Hire' %}green{% elif r == 'Hire' %}blue{% elif r == 'Maybe' %}amber{% else %}red{% endif %}{% endmacro %}
 {% macro bar_color(s) %}{% if s >= 8 %}#10b981{% elif s >= 6.5 %}#3b82f6{% elif s >= 5 %}#f59e0b{% else %}#ef4444{% endif %}{% endmacro %}
 
-<!-- ── COVER ─────────────────────────────────────────────────────────── -->
+
 <div class="cover">
   <div class="cover-inner">
     <div class="cover-tag">📋 AI Shortlist Report</div>
@@ -258,7 +258,7 @@ body{
   </div>
 </div>
 
-<!-- ── KPI STRIP ──────────────────────────────────────────────────────── -->
+
 <div class="kpi-strip">
   <div class="kpi-item">
     <div class="kpi-num c-purple">{{ report.total_analyzed }}</div>
@@ -287,7 +287,7 @@ body{
   </div>
 </div>
 
-<!-- ── JD SUMMARY ─────────────────────────────────────────────────────── -->
+
 <div class="jd-section">
   <div class="section-label">Job Requirements Summary</div>
   <div class="jd-grid">
@@ -315,7 +315,6 @@ body{
   </div>
 </div>
 
-<!-- ── CANDIDATES ─────────────────────────────────────────────────────── -->
 <div class="content">
   <div class="section-hdr">
     <h2>🏆 Ranked Shortlist</h2>
@@ -328,7 +327,7 @@ body{
 
   <div class="ccard">
 
-    <!-- Header -->
+   
     <div class="ccard-header">
       <div class="rank-circle bg-{{ sc }} c-{{ sc }}"
            style="border-color:{% if sc=='green' %}#10b981{% elif sc=='blue' %}#3b82f6{% elif sc=='amber' %}#f59e0b{% else %}#ef4444{% endif %}33;">
@@ -360,10 +359,10 @@ body{
       </div>
     </div>
 
-    <!-- Body -->
+
     <div class="ccard-body">
 
-      <!-- Dimensions -->
+  
       <div class="dims-panel">
         <div class="dims-title">5-Dimension Scoring Breakdown</div>
         {% for s in c.scores %}
@@ -382,7 +381,7 @@ body{
         {% endfor %}
       </div>
 
-      <!-- Side Panel -->
+  
       <div class="side-panel">
         {% if c.strengths %}
         <div class="sg-block">
@@ -428,7 +427,7 @@ body{
   {% endfor %}
 </div>
 
-<!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
+
 <div class="footer">
   <strong>HR Shortlisting Agent</strong> · AI-assisted evaluation powered by Groq &amp; Llama 3.3 70B<br>
   <span style="margin-top:0.3rem;display:block;">This report is AI-generated. Human review is recommended before final hiring decisions.</span>
