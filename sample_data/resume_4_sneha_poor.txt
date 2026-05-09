@@ -1,0 +1,36 @@
+SNEHA PATEL
+Fresh Graduate | Aspiring Developer
+sneha.patel2024@gmail.com | Ahmedabad, Gujarat
+
+OBJECTIVE
+Recent B.Tech graduate eager to start my career in software development. 
+I am a quick learner and hardworking individual who is passionate about coding.
+
+SKILLS
+- C, C++, Java (college coursework)
+- Basic Python (learned from YouTube)
+- HTML, CSS (basic)
+- Microsoft Office (Word, Excel, PowerPoint)
+- SQL (basic SELECT queries)
+
+EDUCATION
+B.Tech, Electronics and Communication Engineering
+LJ University, Ahmedabad | 2020 – 2024 | CGPA: 6.8/10
+
+INTERNSHIP
+Web Development Intern | Local Agency | Ahmedabad | May 2023 – July 2023 (2 months)
+- Assisted in making simple HTML/CSS web pages
+- Fixed minor bugs in WordPress themes
+- Attended client meetings
+
+PROJECTS
+- College Website Redesign: Redesigned college department page using HTML and CSS
+- Student Result Management: Simple Java desktop app for managing student grades (college project)
+- Arduino LED Project: Microcontroller-based LED pattern display (ECE project)
+
+EXTRA-CURRICULAR
+- Cultural Committee Head, LJ University (2022-2023)
+- Participated in state-level dance competition
+
+CERTIFICATIONS
+- NPTEL: Introduction to Programming in C (2022)

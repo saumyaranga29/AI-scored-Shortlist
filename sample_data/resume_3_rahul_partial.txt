@@ -1,0 +1,43 @@
+RAHUL VERMA
+Data Engineer | Big Data & Analytics
+rahul.v@outlook.com | Mumbai, India
+
+PROFESSIONAL SUMMARY
+Experienced data engineer with 5 years in data pipeline development, ETL workflows, 
+and cloud data warehousing. Strong background in Python for data engineering (not 
+web development). Skilled in Spark, Airflow, and cloud platforms.
+
+SKILLS
+- Python (Pandas, PySpark, Airflow DAGs)
+- SQL, HiveQL, BigQuery
+- Apache Spark, Kafka, Flink
+- GCP (BigQuery, Dataflow, GCS), AWS S3 + Glue
+- dbt (data build tool)
+- Docker, basic Kubernetes
+- Git, CI/CD (basic)
+- Power BI, Tableau
+
+WORK EXPERIENCE
+
+Senior Data Engineer | Juspay | Mumbai | Jan 2022 – Present (2.5 years)
+- Built and maintained 30+ Airflow DAGs for ETL pipelines ingesting 5TB/day
+- Migrated on-premise Hadoop cluster to GCP Dataflow
+- Optimised BigQuery queries, reducing compute costs by 30%
+
+Data Engineer | Mu Sigma | Bengaluru | Aug 2019 – Dec 2021 (2.5 years)
+- Developed Python ETL pipelines for FMCG client analytics
+- Created dashboards in Tableau for stakeholder reporting
+- Worked with Kafka for real-time streaming data
+
+EDUCATION
+B.Tech, Computer Science
+BITS Pilani | 2015 – 2019 | CGPA: 7.9/10
+
+CERTIFICATIONS
+- GCP Professional Data Engineer (2022)
+- Databricks Certified Associate Developer for Apache Spark (2021)
+
+PROJECTS
+- Real-Time Fraud Pipeline: Kafka + Spark Streaming + BigQuery for payment fraud detection
+- ETL Framework: Generic Python ETL framework for multiple data sources (internal tool)
+- Cost Optimisation: Automated BigQuery slot usage monitoring dashboard

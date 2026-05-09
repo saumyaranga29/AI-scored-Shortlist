@@ -1,0 +1,53 @@
+ARJUN MEHTA
+Senior Software Engineer | Full-Stack Developer
+Email: arjun.mehta@email.com | Phone: +91 98765 43210
+LinkedIn: linkedin.com/in/arjunmehta | GitHub: github.com/arjunmehta
+Location: Bengaluru, Karnataka
+
+PROFESSIONAL SUMMARY
+Seasoned full-stack engineer with 6 years of experience building scalable SaaS products. 
+Expert in Python (FastAPI, Django) and React/Next.js ecosystems. Led the re-architecture 
+of a monolith into microservices serving 500k+ daily active users. AWS Certified Developer 
+with strong DevOps mindset.
+
+SKILLS
+Languages: Python, JavaScript, TypeScript, SQL, Bash
+Frontend: React.js, Next.js, Redux, TailwindCSS, HTML5, CSS3
+Backend: FastAPI, Django, Node.js (Express), GraphQL
+Databases: PostgreSQL, MySQL, Redis, MongoDB
+Cloud & DevOps: AWS (EC2, S3, RDS, Lambda, ECS), Docker, Kubernetes, Helm, GitHub Actions, Jenkins, Terraform
+Testing: Pytest, Jest, Cypress
+Tools: Git, Jira, Figma, Postman
+
+WORK EXPERIENCE
+
+Senior Software Engineer | Razorpay | Bengaluru | June 2022 – Present (2 years)
+- Designed and built 12 RESTful microservices using FastAPI and deployed on AWS ECS
+- Migrated legacy Django monolith to microservices, reducing p99 latency by 40%
+- Mentored a team of 4 junior engineers and conducted weekly code reviews
+- Implemented CI/CD pipelines using GitHub Actions; maintained >85% test coverage
+- Built React/Next.js dashboards consumed by 15,000+ merchants daily
+
+Full-Stack Engineer | Freshworks | Chennai | July 2020 – May 2022 (2 years)
+- Developed features for CRM product using Django REST Framework + React.js
+- Built real-time notification system using Redis Pub/Sub and WebSockets
+- Collaborated with product and design teams in 2-week Agile sprints
+
+Software Engineer | Infosys | Pune | August 2018 – June 2020 (2 years)
+- Maintained enterprise Java/Spring applications (migrated to Python REST APIs)
+- Automated deployments using Jenkins and Docker
+
+EDUCATION
+B.Tech, Computer Science and Engineering
+National Institute of Technology, Warangal | 2014 – 2018 | CGPA: 8.7/10
+
+CERTIFICATIONS
+- AWS Certified Developer – Associate (2023)
+- AWS Certified Solutions Architect – Associate (2022)
+- Google Cloud Professional Data Engineer (2021)
+
+PROJECTS
+- Merchant Dashboard: Real-time analytics dashboard for Razorpay merchants (React + FastAPI + PostgreSQL)
+- Microservices Migration: Led end-to-end migration of payment service from Django monolith
+- Open Source: Contributor to FastAPI and Django REST Framework (50+ GitHub stars on personal libraries)
+- Personal Finance Tracker: Next.js + Python app with ML-based spend categorisation (AWS Lambda deployment)

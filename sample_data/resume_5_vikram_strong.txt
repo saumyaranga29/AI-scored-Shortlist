@@ -1,0 +1,53 @@
+VIKRAM NAIR
+Senior Full-Stack Engineer | TypeScript & Cloud Specialist
+vikram.nair@proton.me | +91 88001 22334 | Bengaluru, India
+Portfolio: vikramnair.dev | GitHub: github.com/vikramnair
+
+PROFESSIONAL SUMMARY
+Full-stack engineer with 5 years of experience specialising in TypeScript-first 
+architectures using React/Next.js on the frontend and Node.js/NestJS on the backend. 
+Proficient in AWS, Kubernetes, and modern DevOps practices. Looking for a senior IC role 
+in a product-driven company.
+
+TECHNICAL SKILLS
+Languages: TypeScript, JavaScript, Python (scripting level), Go (basic)
+Frontend: React.js, Next.js 14 (App Router), Redux Toolkit, React Query, Framer Motion
+Backend: Node.js, NestJS, Express.js, tRPC, GraphQL (Apollo)
+Databases: PostgreSQL, MongoDB, Redis, Prisma ORM
+Cloud: AWS (EC2, ECS, RDS, S3, CloudFront, Lambda, SQS), GCP basics
+DevOps: Docker, Kubernetes (EKS), Helm, Terraform, GitHub Actions, ArgoCD
+Testing: Jest, Playwright, Supertest
+Other: REST APIs, WebSockets, Stripe integration, OpenAI API
+
+EXPERIENCE
+
+Senior Software Engineer | Cred | Bengaluru | April 2022 – Present (2 years)
+- Architected and built member-facing features in Next.js 14 with SSR/ISR
+- Designed Node.js/NestJS microservices for loyalty rewards engine handling 1M req/day
+- Set up Kubernetes (EKS) cluster and Helm charts for 8 services; led DevOps practices
+- Introduced tRPC for end-to-end type safety between frontend and backend
+- Conducted architecture reviews; mentored 3 mid-level engineers
+
+Software Engineer | Postman | Bengaluru | June 2020 – March 2022 (2 years)
+- Built React components for Postman's API testing UI (used by 20M+ developers)
+- Implemented GraphQL APIs for new features using Apollo Server + Node.js
+- Wrote Jest + Playwright tests achieving >90% code coverage on owned modules
+
+Software Engineer (Contract) | Startup (Stealth) | Remote | Jan 2019 – May 2020 (1.5 years)
+- Built full-stack MVP using Next.js and Express; deployed on AWS
+- Integrated Stripe payment gateway and SendGrid email service
+
+EDUCATION
+B.Tech, Computer Science
+VIT University, Vellore | 2015 – 2019 | CGPA: 8.2/10
+
+CERTIFICATIONS
+- AWS Certified Solutions Architect – Associate (2023)
+- Certified Kubernetes Application Developer – CKAD (2022)
+- MongoDB Certified Developer Associate (2021)
+
+PROJECTS
+- RewardEngine: Distributed microservices-based loyalty platform (Node.js + Kafka + Redis + PostgreSQL)
+- NextShop: E-commerce template (Next.js 14, Stripe, Prisma, Vercel) — 800+ GitHub stars
+- PollSync: Real-time polling app using WebSockets + React + Redis (personal project)
+- Open Source: Maintainer of a Prisma plugin with 1.2k npm weekly downloads

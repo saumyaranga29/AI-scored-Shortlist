@@ -1,0 +1,43 @@
+PRIYA SHARMA
+Software Engineer – Backend & Frontend
+priya.sharma@gmail.com | 9876501234 | Hyderabad, India
+GitHub: github.com/priyasharma
+
+ABOUT ME
+Full-stack developer with 4 years of experience. I enjoy building web apps with React and 
+Python. Currently working at a mid-size startup. Looking for opportunities to grow into a 
+senior engineering role.
+
+TECHNICAL SKILLS
+- Python (Flask, some FastAPI)
+- React.js, basic Next.js
+- PostgreSQL, SQLite
+- Git, GitHub
+- Docker (basic usage)
+- REST APIs
+- HTML, CSS, JavaScript
+
+EXPERIENCE
+
+Software Engineer | TechMinds Solutions | Hyderabad | Jan 2022 – Present (2.5 years)
+- Build and maintain REST APIs using Python Flask for e-commerce platform
+- Developed React.js frontend for internal admin dashboard
+- Wrote SQL queries and managed PostgreSQL database
+- Worked in Agile team with 2-week sprints
+
+Junior Developer | Wipro | Bengaluru | July 2020 – Dec 2021 (1.5 years)
+- Maintained legacy PHP/Laravel web applications
+- Assisted in migration to React frontend
+- Basic Docker usage for local dev setup
+
+EDUCATION
+B.E., Information Technology
+Osmania University, Hyderabad | 2016 – 2020 | 72%
+
+CERTIFICATIONS
+- Udemy: Complete Python Bootcamp (2021)
+- Coursera: React – The Complete Guide (2022)
+
+PROJECTS
+- E-Commerce Admin Panel: Built using React + Flask + PostgreSQL for TechMinds
+- Personal Blog: Next.js static site deployed on Vercel

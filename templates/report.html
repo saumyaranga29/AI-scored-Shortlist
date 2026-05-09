@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Shortlist Report – {{ report.job_title }}</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg:#05070f;
+  --s1:#0d0f1e;
+  --s2:#111627;
+  --s3:#181d30;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --text:#e2e8f0;
+  --muted:#64748b;
+  --muted2:#94a3b8;
+  --purple:#7c3aed;
+  --indigo:#6366f1;
+  --cyan:#06b6d4;
+  --green:#10b981;
+  --blue:#3b82f6;
+  --amber:#f59e0b;
+  --red:#ef4444;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);color:var(--text);
+  min-height:100vh;line-height:1.6;
+}
+
+/* ── COVER HEADER ────────────────────────────────────────────── */
+.cover{
+  background:linear-gradient(135deg,#0d0221 0%,#150a3d 45%,#0a1628 100%);
+  padding:3.5rem 4rem 3rem;position:relative;overflow:hidden;
+  border-bottom:1px solid rgba(124,58,237,0.35);
+}
+.cover::before{
+  content:'';position:absolute;top:-100px;right:-80px;
+  width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,0.3) 0%,transparent 65%);
+}
+.cover::after{
+  content:'';position:absolute;bottom:-120px;left:30%;
+  width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(6,182,212,0.2) 0%,transparent 65%);
+}
+.cover-inner{position:relative;z-index:2;}
+.cover-tag{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:rgba(124,58,237,0.18);border:1px solid rgba(124,58,237,0.45);
+  color:#c4b5fd;padding:0.3rem 1rem;border-radius:999px;
+  font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  margin-bottom:1.2rem;
+}
+.cover-title{
+  font-size:2.8rem;font-weight:900;letter-spacing:-0.04em;line-height:1.1;
+  background:linear-gradient(135deg,#fff 0%,#c4b5fd 50%,#67e8f9 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.cover-role{
+  display:inline-block;margin-top:0.7rem;
+  font-size:1.2rem;color:rgba(255,255,255,0.7);font-weight:500;
+}
+.cover-meta{
+  display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1.5rem;
+}
+.cmeta{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.65);border-radius:999px;
+  padding:0.28rem 0.85rem;font-size:0.75rem;font-weight:500;
+}
+
+/* ── KPI STRIP ────────────────────────────────────────────────── */
+.kpi-strip{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  gap:0;border-bottom:1px solid var(--border);
+  background:var(--s1);
+}
+.kpi-item{
+  padding:1.4rem 1.2rem;text-align:center;
+  border-right:1px solid var(--border);
+}
+.kpi-item:last-child{border-right:none;}
+.kpi-num{font-size:2rem;font-weight:800;line-height:1;}
+.kpi-lbl{font-size:0.63rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:0.07em;margin-top:0.25rem;}
+
+/* ── JD SUMMARY ──────────────────────────────────────────────── */
+.jd-section{
+  padding:2rem 4rem;background:var(--s1);
+  border-bottom:1px solid var(--border);
+}
+.section-label{
+  font-size:0.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--purple);
+  border-left:3px solid var(--purple);padding-left:0.6rem;
+  margin-bottom:0.9rem;
+}
+.jd-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;}
+.jd-field{background:var(--s2);border:1px solid var(--border);
+  border-radius:12px;padding:1rem;}
+.jd-field-label{font-size:0.65rem;color:var(--muted);text-transform:uppercase;
+  letter-spacing:0.08em;margin-bottom:0.4rem;}
+.jd-field-val{font-size:0.85rem;color:var(--text);font-weight:500;}
+.pill-wrap{display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem;}
+.skill-pill{
+  background:rgba(124,58,237,0.12);border:1px solid rgba(124,58,237,0.3);
+  color:#a78bfa;border-radius:999px;padding:0.2rem 0.6rem;font-size:0.72rem;
+}
+.skill-pill.pref{
+  background:rgba(6,182,212,0.08);border-color:rgba(6,182,212,0.25);color:#67e8f9;
+}
+
+/* ── MAIN CONTENT ─────────────────────────────────────────────── */
+.content{padding:2.5rem 4rem;}
+.section-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:1.5rem;
+}
+.section-hdr h2{font-size:1.1rem;font-weight:700;color:var(--muted2);}
+
+/* ── CANDIDATE CARD ───────────────────────────────────────────── */
+.ccard{
+  background:var(--s2);border:1px solid var(--border);
+  border-radius:20px;margin-bottom:1.5rem;overflow:hidden;
+  transition:border-color 0.2s;
+}
+.ccard:hover{border-color:rgba(124,58,237,0.4);}
+
+.ccard-header{
+  display:grid;grid-template-columns:60px 1fr auto;gap:1.5rem;
+  align-items:center;padding:1.5rem 2rem;
+  border-bottom:1px solid var(--border);
+}
+.rank-circle{
+  width:52px;height:52px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;font-weight:900;flex-shrink:0;
+  border:2px solid;
+}
+.cname{font-size:1.15rem;font-weight:700;color:var(--text);}
+.cmeta-row{font-size:0.8rem;color:var(--muted);margin-top:0.25rem;}
+.cmeta-row span{margin-right:1rem;}
+
+.score-block{text-align:right;flex-shrink:0;}
+.score-big{font-size:2.8rem;font-weight:900;line-height:1;}
+.score-denom{font-size:1rem;color:var(--muted);font-weight:400;}
+.rec-badge{
+  display:inline-block;margin-top:0.4rem;
+  padding:0.3rem 0.9rem;border-radius:999px;font-size:0.78rem;font-weight:700;
+}
+
+/* ── CARD BODY ────────────────────────────────────────────────── */
+.ccard-body{display:grid;grid-template-columns:1fr 320px;gap:0;}
+.dims-panel{padding:1.5rem 2rem;border-right:1px solid var(--border);}
+.dims-title{font-size:0.7rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.08em;color:var(--muted);margin-bottom:1rem;}
+
+.dim-row{margin-bottom:0.9rem;}
+.dim-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.3rem;}
+.dim-name{font-size:0.8rem;font-weight:600;color:var(--muted2);}
+.dim-weight{font-size:0.68rem;color:var(--muted);}
+.dim-score-val{font-size:0.85rem;font-weight:700;}
+.bar-track{background:var(--s3);border-radius:999px;height:6px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:999px;}
+.dim-just{font-size:0.71rem;color:var(--muted);margin-top:0.3rem;
+  padding-left:0.3rem;border-left:2px solid rgba(255,255,255,0.08);}
+
+/* ── SIDE PANEL ───────────────────────────────────────────────── */
+.side-panel{padding:1.5rem;}
+.sg-block{margin-bottom:1.2rem;}
+.sg-title{font-size:0.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.08em;margin-bottom:0.5rem;}
+.sg-item{
+  display:flex;align-items:flex-start;gap:0.4rem;
+  font-size:0.78rem;color:var(--muted2);margin-bottom:0.3rem;line-height:1.4;
+}
+.sg-dot{flex-shrink:0;width:5px;height:5px;border-radius:50%;margin-top:0.5rem;}
+
+.assessment-box{
+  background:var(--s3);border:1px solid var(--border);
+  border-radius:10px;padding:0.8rem;margin-top:0.8rem;
+}
+.assessment-box p{font-size:0.75rem;color:var(--muted);font-style:italic;line-height:1.5;}
+
+/* ── OVERRIDE NOTICE ──────────────────────────────────────────── */
+.override-bar{
+  background:rgba(245,158,11,0.08);border-top:1px solid rgba(245,158,11,0.25);
+  padding:0.6rem 2rem;font-size:0.75rem;color:var(--amber);
+  display:flex;align-items:center;gap:0.5rem;
+}
+
+/* ── FOOTER ───────────────────────────────────────────────────── */
+.footer{
+  text-align:center;padding:2rem;color:var(--muted);font-size:0.75rem;
+  border-top:1px solid var(--border);background:var(--s1);
+  margin-top:2rem;
+}
+.footer strong{color:var(--muted2);}
+
+/* ── COLOR UTILS ──────────────────────────────────────────────── */
+.c-green{color:var(--green)!important;}
+.c-blue {color:var(--blue)!important;}
+.c-amber{color:var(--amber)!important;}
+.c-red  {color:var(--red)!important;}
+.c-purple{color:#a78bfa!important;}
+.bg-green{background:rgba(16,185,129,.12);border-color:rgba(16,185,129,.35)!important;}
+.bg-blue {background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.35)!important;}
+.bg-amber{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.35)!important;}
+.bg-red  {background:rgba(239,68,68,.12); border-color:rgba(239,68,68,.35)!important;}
+
+/* ── PRINT ────────────────────────────────────────────────────── */
+@media print{
+  body{background:#fff;color:#000;}
+  .ccard{break-inside:avoid;background:#f8fafc;border:1px solid #e2e8f0;}
+  .cover{background:#1e1b4b;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .ccard-body{grid-template-columns:1fr 280px;}
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────────── */
+@media(max-width:900px){
+  .cover,.jd-section,.content{padding-left:1.5rem;padding-right:1.5rem;}
+  .kpi-strip{grid-template-columns:repeat(3,1fr);}
+  .kpi-item:nth-child(3){border-right:none;}
+  .jd-grid{grid-template-columns:1fr;}
+  .ccard-header{grid-template-columns:50px 1fr auto;gap:1rem;}
+  .ccard-body{grid-template-columns:1fr;}
+  .dims-panel{border-right:none;border-bottom:1px solid var(--border);}
+}
+</style>
+</head>
+<body>
+
+{% macro score_color(s) %}{% if s >= 8 %}green{% elif s >= 6.5 %}blue{% elif s >= 5 %}amber{% else %}red{% endif %}{% endmacro %}
+{% macro rec_color(r) %}{% if r == 'Strong Hire' %}green{% elif r == 'Hire' %}blue{% elif r == 'Maybe' %}amber{% else %}red{% endif %}{% endmacro %}
+{% macro bar_color(s) %}{% if s >= 8 %}#10b981{% elif s >= 6.5 %}#3b82f6{% elif s >= 5 %}#f59e0b{% else %}#ef4444{% endif %}{% endmacro %}
+
+<!-- ── COVER ─────────────────────────────────────────────────────────── -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-tag">📋 AI Shortlist Report</div>
+    <div class="cover-title">Candidate Evaluation<br>& Shortlist Report</div>
+    <div class="cover-role">{{ report.job_title }}</div>
+    <div class="cover-meta">
+      <span class="cmeta">📅 {{ report.generated_at }}</span>
+      <span class="cmeta">🏢 {{ report.jd_summary.domain }}</span>
+      <span class="cmeta">🎯 {{ report.jd_summary.seniority_level }}</span>
+      <span class="cmeta">🧑‍💼 Min {{ report.jd_summary.min_experience_years }}+ years exp</span>
+      <span class="cmeta">📂 {{ report.total_analyzed }} candidates analysed</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── KPI STRIP ──────────────────────────────────────────────────────── -->
+<div class="kpi-strip">
+  <div class="kpi-item">
+    <div class="kpi-num c-purple">{{ report.total_analyzed }}</div>
+    <div class="kpi-lbl">Analysed</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-num c-green">{{ report.candidates | selectattr('recommendation','equalto','Strong Hire') | list | length }}</div>
+    <div class="kpi-lbl">Strong Hire</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-num c-blue">{{ report.candidates | selectattr('recommendation','equalto','Hire') | list | length }}</div>
+    <div class="kpi-lbl">Hire</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-num c-amber">{{ report.candidates | selectattr('recommendation','equalto','Maybe') | list | length }}</div>
+    <div class="kpi-lbl">Maybe</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-num c-red">{{ report.candidates | selectattr('recommendation','equalto','No Hire') | list | length }}</div>
+    <div class="kpi-lbl">No Hire</div>
+  </div>
+  <div class="kpi-item">
+    {% set total = namespace(v=0) %}{% for c in report.candidates %}{% set total.v = total.v + c.total_score %}{% endfor %}
+    <div class="kpi-num c-purple">{{ "%.1f" | format(total.v / report.total_analyzed) }}</div>
+    <div class="kpi-lbl">Avg Score</div>
+  </div>
+</div>
+
+<!-- ── JD SUMMARY ─────────────────────────────────────────────────────── -->
+<div class="jd-section">
+  <div class="section-label">Job Requirements Summary</div>
+  <div class="jd-grid">
+    <div class="jd-field">
+      <div class="jd-field-label">Required Skills</div>
+      <div class="pill-wrap">
+        {% for s in report.jd_summary.required_skills[:8] %}<span class="skill-pill">{{ s }}</span>{% endfor %}
+      </div>
+    </div>
+    <div class="jd-field">
+      <div class="jd-field-label">Preferred Skills</div>
+      <div class="pill-wrap">
+        {% for s in report.jd_summary.preferred_skills[:6] %}<span class="skill-pill pref">{{ s }}</span>{% endfor %}
+        {% if not report.jd_summary.preferred_skills %}<span style="color:var(--muted);font-size:0.8rem;">None specified</span>{% endif %}
+      </div>
+    </div>
+    <div class="jd-field">
+      <div class="jd-field-label">Education</div>
+      <div class="jd-field-val">{{ report.jd_summary.education_requirements }}</div>
+      {% if report.jd_summary.certifications %}
+      <div class="jd-field-label" style="margin-top:0.6rem;">Certifications</div>
+      <div class="pill-wrap">{% for c in report.jd_summary.certifications %}<span class="skill-pill pref">{{ c }}</span>{% endfor %}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- ── CANDIDATES ─────────────────────────────────────────────────────── -->
+<div class="content">
+  <div class="section-hdr">
+    <h2>🏆 Ranked Shortlist</h2>
+    <span style="font-size:0.75rem;color:var(--muted);">Sorted by total weighted score ↓</span>
+  </div>
+
+  {% for c in report.candidates %}
+  {% set sc = score_color(c.total_score) %}
+  {% set rc = rec_color(c.recommendation) %}
+
+  <div class="ccard">
+
+    <!-- Header -->
+    <div class="ccard-header">
+      <div class="rank-circle bg-{{ sc }} c-{{ sc }}"
+           style="border-color:{% if sc=='green' %}#10b981{% elif sc=='blue' %}#3b82f6{% elif sc=='amber' %}#f59e0b{% else %}#ef4444{% endif %}33;">
+        #{{ loop.index }}
+      </div>
+
+      <div>
+        <div class="cname">
+          {{ c.candidate_name }}
+          {% if c.is_overridden %}<span style="font-size:0.68rem;background:rgba(245,158,11,.15);color:#f59e0b;border:1px solid rgba(245,158,11,.3);border-radius:999px;padding:0.1rem 0.5rem;margin-left:0.5rem;">⚠ Overridden</span>{% endif %}
+        </div>
+        <div class="cmeta-row">
+          <span>💼 {{ c.profile.current_role or 'N/A' }}</span>
+          <span>⏱ {{ c.profile.experience_years | int }} yrs exp</span>
+          <span>📄 {{ c.file_name }}</span>
+        </div>
+        <div style="margin-top:0.5rem;">
+          {% for skill in c.profile.skills[:5] %}<span class="skill-pill" style="font-size:0.66rem;padding:0.15rem 0.5rem;">{{ skill }}</span>{% endfor %}
+          {% if c.profile.skills | length > 5 %}<span style="font-size:0.66rem;color:var(--muted);">+{{ c.profile.skills | length - 5 }} more</span>{% endif %}
+        </div>
+      </div>
+
+      <div class="score-block">
+        <div class="score-big c-{{ sc }}">{{ "%.1f" | format(c.total_score) }}<span class="score-denom">/10</span></div>
+        <span class="rec-badge bg-{{ rc }} c-{{ rc }}">
+          {% if c.recommendation == 'Strong Hire' %}🟢{% elif c.recommendation == 'Hire' %}🔵{% elif c.recommendation == 'Maybe' %}🟡{% else %}🔴{% endif %}
+          {{ c.recommendation }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="ccard-body">
+
+      <!-- Dimensions -->
+      <div class="dims-panel">
+        <div class="dims-title">5-Dimension Scoring Breakdown</div>
+        {% for s in c.scores %}
+        {% set dc = score_color(s.raw_score) %}
+        <div class="dim-row">
+          <div class="dim-top">
+            <span class="dim-name">{{ s.dimension }}</span>
+            <span class="dim-weight">Weight {{ (s.weight * 100) | int }}%</span>
+            <span class="dim-score-val c-{{ dc }}">{{ "%.1f" | format(s.raw_score) }} / 10</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width:{{ s.raw_score * 10 }}%;background:{{ bar_color(s.raw_score) }};"></div>
+          </div>
+          <div class="dim-just">↳ {{ s.justification }}</div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Side Panel -->
+      <div class="side-panel">
+        {% if c.strengths %}
+        <div class="sg-block">
+          <div class="sg-title c-green">✅ Strengths</div>
+          {% for s in c.strengths %}
+          <div class="sg-item">
+            <div class="sg-dot" style="background:#10b981;"></div>
+            <span>{{ s }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if c.gaps %}
+        <div class="sg-block">
+          <div class="sg-title c-red">⚠ Skill Gaps</div>
+          {% for g in c.gaps %}
+          <div class="sg-item">
+            <div class="sg-dot" style="background:#ef4444;"></div>
+            <span>{{ g }}</span>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if c.overall_justification %}
+        <div class="assessment-box">
+          <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted);margin-bottom:0.4rem;">💬 Overall Assessment</div>
+          <p>{{ c.overall_justification }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if c.is_overridden and c.override_reason %}
+    <div class="override-bar">
+      ⚠ <strong>HR Override:</strong> {{ c.override_reason }}
+      {% if c.original_total_score is not none %} &nbsp;·&nbsp; Original score: {{ "%.1f" | format(c.original_total_score) }}/10{% endif %}
+    </div>
+    {% endif %}
+
+  </div>
+  {% endfor %}
+</div>
+
+<!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
+<div class="footer">
+  <strong>HR Shortlisting Agent</strong> · AI-assisted evaluation powered by Groq &amp; Llama 3.3 70B<br>
+  <span style="margin-top:0.3rem;display:block;">This report is AI-generated. Human review is recommended before final hiring decisions.</span>
+</div>
+
+</body>
+</html>

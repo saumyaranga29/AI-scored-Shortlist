@@ -1,0 +1,48 @@
+Job Title: Senior Full-Stack Software Engineer
+
+About the Role:
+We are looking for a Senior Full-Stack Software Engineer to join our growing product team. 
+You will design, build, and maintain scalable web applications and APIs that power our 
+SaaS platform used by thousands of customers globally.
+
+Key Responsibilities:
+- Design and build robust RESTful APIs and microservices using Python (FastAPI/Django) or Node.js
+- Develop responsive front-end interfaces using React.js or Next.js
+- Work with cloud infrastructure (AWS/GCP/Azure) to deploy and scale services
+- Write clean, well-tested code with >80% unit test coverage
+- Participate in code reviews, architecture discussions, and sprint planning
+- Mentor junior engineers and contribute to engineering culture
+- Collaborate with Product and Design teams to deliver features
+
+Required Skills:
+- Python (FastAPI or Django) — 3+ years
+- React.js / Next.js — 2+ years
+- RESTful API design and development
+- SQL databases (PostgreSQL or MySQL)
+- Git and CI/CD pipelines (GitHub Actions, Jenkins)
+- Docker and containerisation
+- Agile/Scrum methodology
+
+Preferred Skills:
+- TypeScript
+- Redis or other caching solutions
+- Kubernetes / Helm
+- AWS services (EC2, S3, RDS, Lambda)
+- Experience with GraphQL
+- Knowledge of system design and distributed systems
+
+Experience Required:
+- Minimum 4 years of professional software engineering experience
+- At least 2 years in a full-stack or backend-focused role
+
+Education:
+- B.Tech / B.E. / B.Sc in Computer Science, Information Technology, or a related field
+- M.Tech / M.S. preferred but not mandatory
+
+Certifications (Preferred):
+- AWS Certified Developer – Associate
+- Google Cloud Professional Developer
+- Any relevant cloud or DevOps certification
+
+Compensation: ₹18–28 LPA depending on experience
+Location: Bengaluru, India (Hybrid – 3 days in office)
