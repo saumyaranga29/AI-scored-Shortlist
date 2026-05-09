@@ -20,7 +20,7 @@ API_KEY = get_secret("GROQ_API_KEY", "")
 MODEL   = get_secret("GROQ_MODEL", DEFAULT_MODEL)
 
 
-# Load space hero background as base64
+
 _bg_path = os.path.join(os.path.dirname(__file__), "static", "space_hero_bg.png")
 _BG_B64 = ""
 if os.path.exists(_bg_path):
@@ -165,7 +165,7 @@ if _BG_B64:
 
 
 
-# helpers
+
 def sc(s): return "green" if s>=8 else "blue" if s>=6.5 else "amber" if s>=5 else "red"
 COLS={"green":"#10b981","blue":"#3b82f6","amber":"#f59e0b","red":"#ef4444"}
 RECS={"Strong Hire":("&#x1F7E2;","rgba(16,185,129,0.12)","#10b981"),"Hire":("&#x1F535;","rgba(59,130,246,0.12)","#3b82f6"),
@@ -179,11 +179,11 @@ def bar(s,w):
            f'<div class="bt"><div class="bf" style="width:{s*10}%;background:{col};"></div></div>'
            f'<span style="font-size:.78rem;font-weight:700;color:{col};text-align:right;">{s:.1f}</span></div>')
 
-# session state
+
 for k,v in [("results",[]),("jd_parsed",None),("override_log",[])]:
     if k not in st.session_state: st.session_state[k]=v
 
-# HERO + WAVE + STEPS
+
 st.markdown("""
 <div class="hero">
   <div style="position:relative;z-index:2;">
@@ -216,7 +216,7 @@ tab1,tab2,tab3 = st.tabs(["📋  Setup & Analyse","🏆  Results & Override","�
 
 
 
-# ── TAB 1 ──────────────────────────────────────────────────────────────────
+
 with tab1:
     c1,c2 = st.columns([1,1],gap="large")
     with c1:
@@ -299,8 +299,7 @@ with tab1:
         st.session_state.override_log=[]
         st.success(f"🎉 Analysed **{len(results)}** candidates! See the **Results** tab →")
 
-# ── TAB 2 ──────────────────────────────────────────────────────────────────
-with tab2:
+
     results=st.session_state.results
     if not results:
         st.markdown("""<div style="text-align:center;padding:5rem;background:white;border-radius:20px;
@@ -383,7 +382,7 @@ with tab2:
         if st.session_state.override_log:
             with st.expander("📋 Override Audit Log"): st.json(st.session_state.override_log)
 
-# ── TAB 3 ──────────────────────────────────────────────────────────────────
+
 with tab3:
     results=st.session_state.results
     if not results:
