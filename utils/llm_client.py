@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Groq models (all free on free tier)
+
 AVAILABLE_MODELS = {
     "⭐ Llama 3.3 70B (FREE - Best)": "llama-3.3-70b-versatile",
     "⭐ Llama 3.1 8B (FREE - Fast)": "llama-3.1-8b-instant",
@@ -23,7 +23,7 @@ AVAILABLE_MODELS = {
 
 DEFAULT_MODEL = "llama-3.3-70b-versatile"
 
-# Fallback chain on rate-limit
+
 FALLBACK_MODELS = [
     "llama-3.3-70b-versatile",
     "llama-3.1-8b-instant",
@@ -50,7 +50,7 @@ def get_llm_client(api_key: str = None) -> OpenAI:
 
 def extract_json(text: str) -> dict:
     """Robustly extract JSON from LLM response text."""
-    # 1. Try markdown code block
+    
     match = re.search(r"```(?:json)?\s*\n?(.*?)\n?```", text, re.DOTALL)
     if match:
         try:
@@ -58,13 +58,13 @@ def extract_json(text: str) -> dict:
         except json.JSONDecodeError:
             pass
 
-    # 2. Try direct parse
+   
     try:
         return json.loads(text.strip())
     except json.JSONDecodeError:
         pass
 
-    # 3. Find outermost JSON object / array
+
     for start_char, end_char in [('{', '}'), ('[', ']')]:
         start = text.find(start_char)
         end = text.rfind(end_char)
