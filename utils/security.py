@@ -5,7 +5,7 @@ These mitigations are mandatory per the project brief.
 import re
 from pathlib import Path
 
-# ── Prompt-injection patterns ────────────────────────────────────────────────
+
 _INJECTION_PATTERNS = [
     r"ignore (?:previous|all|above|prior) (?:instructions?|prompts?|context)",
     r"(?:system|assistant)\s*:\s*",
@@ -44,19 +44,19 @@ def sanitize_text(text: str, max_length: int = 60_000) -> str:
 
 def mask_pii_for_log(text: str) -> str:
     """Mask PII fields so logs never contain plaintext personal data."""
-    # Emails
+  
     text = re.sub(
         r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b",
         "[EMAIL_MASKED]",
         text,
     )
-    # Phone numbers (international + Indian formats)
+
     text = re.sub(
         r"\b(?:\+?\d{1,3}[-.\s]?)?\(?\d{3,5}\)?[-.\s]?\d{3,4}[-.\s]?\d{4}\b",
         "[PHONE_MASKED]",
         text,
     )
-    # Aadhaar-style 12-digit numbers
+    
     text = re.sub(r"\b\d{4}\s?\d{4}\s?\d{4}\b", "[ID_MASKED]", text)
     return text
 
