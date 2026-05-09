@@ -11,7 +11,7 @@ from models.schemas import (
 )
 from utils.llm_client import chat_completion, extract_json
 
-# ── Rubric Definition ────────────────────────────────────────────────────────
+
 RUBRIC = [
     {
         "dimension": "Skills Match",
@@ -189,7 +189,7 @@ Score this candidate against the JD using the 5-dimension rubric. Return JSON on
     raw = chat_completion(messages, model=model, api_key=api_key)
     data = extract_json(raw)
 
-    # Build DimensionScore objects with weighted scores
+
     dimension_scores = []
     total = 0.0
     for s in data.get("scores", []):
