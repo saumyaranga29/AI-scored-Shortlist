@@ -10,8 +10,15 @@ from agents.scorer import score_candidate
 from agents.report_generator import generate_html_report, generate_json_report
 
 load_dotenv()
-API_KEY = os.getenv("GROQ_API_KEY","")
-MODEL   = os.getenv("GROQ_MODEL", DEFAULT_MODEL)
+def get_secret(key, default=""):
+    try:
+        if key in st.secrets: return st.secrets[key]
+    except Exception: pass
+    return os.getenv(key, default)
+
+API_KEY = get_secret("GROQ_API_KEY", "")
+MODEL   = get_secret("GROQ_MODEL", DEFAULT_MODEL)
+
 
 # Load space hero background as base64
 _bg_path = os.path.join(os.path.dirname(__file__), "static", "space_hero_bg.png")
@@ -251,7 +258,7 @@ with tab1:
     with bc: run=st.button("🚀 Analyse Candidates",use_container_width=True)
 
     if run:
-        if not API_KEY: st.error("❌ GROQ_API_KEY not set in .env — add it and restart."); st.stop()
+        if not API_KEY: st.error("❌ GROQ_API_KEY not set in Streamlit Secrets or .env — add it and restart."); st.stop()
         if not jd_text or len(jd_text.strip())<30: st.error("❌ Provide a Job Description."); st.stop()
         resumes=[]
         if demo:
