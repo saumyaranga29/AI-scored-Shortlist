@@ -1,6 +1,5 @@
 # AI-Powered HR Shortlisting Agent
-
-[![Live Demo](https://ai-scored-shortlist-dsvis2xrnboa6kfuxzhczg.streamlit.app/)
+ Live Demo:- https://ai-scored-shortlist-dsvis2xrnboa6kfuxzhczg.streamlit.app/
 
 An advanced, AI-driven recruitment intelligence application built with **Streamlit** and powered by **Groq (Llama 3.3 70B)**. 
 
