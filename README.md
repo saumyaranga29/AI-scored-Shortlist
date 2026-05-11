@@ -11,21 +11,7 @@ This agent automates the initial resume screening process. It parses a Job Descr
 - **5-Dimension Rubric:** Candidates are evaluated across 5 key areas tailored dynamically to the JD.
 - **Human-in-the-Loop (HITL):** HR professionals can review AI reasoning and override scores with audit logging.
 - **Exportable Reports:** Instantly generate and download visually rich HTML reports or raw JSON data.
-## Agent Architecture Diagram
-```mermaid
-graph TD
-    A[User UI - Streamlit] -->|Upload JD & Resumes| B(File Parser)
-    B --> C{JD Parser Agent}
-    B --> D{Profile Parser Agent}
-    C --> E[Structured JD Context]
-    D --> F[Structured Candidate Profiles]
-    E --> G{Scoring Agent}
-    F --> G
-    G -->|Llama 3.3 70B via Groq| H[5-Dimension Rubric Scoring]
-    H --> I[Human-in-the-Loop Review]
-    I -->|Override/Approve| J[Final Shortlist & Explanations]
-    J --> K(Report Generator)
-    K --> L[HTML/JSON Export]
+
 🧠 LLM & Framework Choice
 LLM Choice: Meta Llama 3.3 70B (via Groq API).
 Rationale: Llama 3.3 70B offers exceptional reasoning capabilities necessary for subjective scoring across a nuanced multi-dimensional rubric. By running it on Groq's LPU inference engine, we achieve lightning-fast token generation, allowing batch processing of multiple resumes in seconds without user friction.
