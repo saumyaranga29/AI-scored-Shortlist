@@ -1,23 +1,19 @@
-# 🚀 AI-Powered HR Shortlisting Agent
+# AI-Powered HR Shortlisting Agent
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-Play_Now-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white)](https://ai-scored-shortlist.streamlit.app/)
-
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-f55036?style=for-the-badge&logo=groq&logoColor=white)
-![Llama 3](https://img.shields.io/badge/Llama_3.3_70B-043c72?style=for-the-badge)
 
 An advanced, AI-driven recruitment intelligence application built with **Streamlit** and powered by **Groq (Llama 3.3 70B)**. 
 
 This agent automates the initial resume screening process. It parses a Job Description (JD) and candidate resumes, evaluates them against a dynamic 5-dimension rubric, and generates a ranked, scored shortlist in seconds.
 
-## ✨ Features
+## Features
 - **Deep Space UI:** Stunning, neon-themed glassmorphism interface.
 - **Lightning Fast Inference:** Uses Groq's high-speed inference for immediate resume parsing.
 - **5-Dimension Rubric:** Candidates are evaluated across 5 key areas tailored dynamically to the JD.
 - **Human-in-the-Loop (HITL):** HR professionals can review AI reasoning and override scores with audit logging.
 - **Exportable Reports:** Instantly generate and download visually rich HTML reports or raw JSON data.
 
-## 🏗 Agent Architecture Diagram
+## Agent Architecture Diagram
 
 ```mermaid
 graph TD
@@ -35,7 +31,7 @@ graph TD
     K --> L[HTML/JSON Export]
 ```
 
-## 🧠 LLM & Framework Choice
+## LLM & Framework Choice
 
 ### 1. LLM Choice: Meta Llama 3.3 70B (via Groq)
 **Rationale:** Llama 3.3 70B offers exceptional reasoning capabilities necessary for subjective scoring across a nuanced multi-dimensional rubric. By running it on Groq's LPU inference engine, we achieve lightning-fast token generation, allowing batch processing of multiple resumes in seconds without user friction.
@@ -53,7 +49,7 @@ graph TD
 - **Human-in-the-Loop:** AI hallucinations or biases are mitigated by the HITL workflow, enforcing that a human recruiter audits and approves the final candidate scoring before any definitive action is taken.
 - **Input Sanitization:** Uploaded files undergo robust parsing and error handling to ensure only valid text/PDF/DOCX documents are processed.
 
-## 🛠 Setup & Installation
+## Setup & Installation
 
 1. **Clone the repository:**
    ```bash
@@ -78,7 +74,7 @@ graph TD
    streamlit run app.py
    ```
 
-## 📸 Usage
+## Usage
 1. **Paste/Upload JD:** Add the target job description.
 2. **Upload Resumes:** Batch upload PDF, DOCX, or TXT files.
 3. **Analyse:** Let the Llama 3.3 model evaluate the candidates.
