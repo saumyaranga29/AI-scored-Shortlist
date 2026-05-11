@@ -41,7 +41,7 @@ graph TD
 ### 3. Data Structuring: Pydantic
 **Rationale:** Using Pydantic ensures the LLM outputs strictly adhere to a predefined JSON schema (for scoring dimensions and justifications). This acts as a robust intelligence layer that prevents parsing errors downstream.
 
-## 🛡 Security Mitigations
+## Security Mitigations
 
 - **Secrets Management:** API Keys are loaded securely from Streamlit Cloud Secrets (production) or an explicitly git-ignored local `.env` file (development). No credentials are ever hard-coded.
 - **Stateless Execution:** The application runs completely stateless. Candidate resumes and extracted evaluations exist solely in memory during the active user session and are never persisted to a database or disk, ensuring applicant privacy.
